@@ -109,6 +109,15 @@ public class ThreadPoolManager implements ThreadPool{
         taskQueue.clear();
     }
 
+    @Override
+    public String toString() {
+        return "ThreadPoolManager{" +
+                "当前的工作线程数量=" + getWorkThreadNumber() +
+                ", 已完成的任务数=" + getExecuteTaskNumber() +
+                ", 等待任务数=" + getWaitTaskNumber() +
+                '}';
+    }
+
 
     private class WorkThread implements Runnable{
         //线程是否可用标识
